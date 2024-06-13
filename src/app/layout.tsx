@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: "Create Next App",

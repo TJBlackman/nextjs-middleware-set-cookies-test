@@ -1,8 +1,12 @@
 import type { NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function middleware(request: NextRequest) {
-  console.log(`running middleware....`, request.method, request.url);
   request.cookies.set("x-middleware-test", "some test value?!");
+
+  return NextResponse.next({
+    request, // <- overwrite the request object!! yay! :D
+  });
 }
 
 export const config = {
